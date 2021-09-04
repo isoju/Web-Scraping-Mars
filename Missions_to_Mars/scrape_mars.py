@@ -1,20 +1,14 @@
 #listing dependencies
 from bs4 import BeautifulSoup as bs
 import pymongo
-import requests
-from flask import Flask, render_template
 import pandas as pd
 from splinter import Browser
 from webdriver_manager.chrome import ChromeDriverManager
 
-
-def test_browser():
-    executable_path = {'executable_path': ChromeDriverManager().install()}
-    return Browser('chrome', **executable_path, headless = False)
-
 def scrape():
     
-    browser = test_browser()
+    executable_path = {'executable_path': ChromeDriverManager().install()}
+    browser = Browser('chrome', **executable_path, headless = False)
     
 
     ##NASA Mars News
